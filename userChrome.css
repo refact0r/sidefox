@@ -1,0 +1,122 @@
+:root {
+	--navbar-height: 48px;
+	--wc-height: 16px;
+	--wc-left-margin: 10px;
+	--wc-red: hsl(-10, 90%, 60%);
+	--wc-yellow: hsl(50, 90%, 60%);
+	--wc-green: hsl(160, 90%, 40%);
+	--sidebar-collapsed-width: var(--navbar-height);
+	--sidebar-width: 250px;
+	--transition-duration: 0.2s;
+	--transition-ease: ease-out;
+}
+
+/* hide tabline */
+#navigator-toolbox {
+	-moz-window-dragging: drag;
+}
+
+#titlebar {
+	appearance: none !important;
+}
+
+#TabsToolbar .toolbar-items {
+	display: none !important;
+}
+
+#TabsToolbar.browser-toolbar {
+	display: block !important;
+	position: absolute;
+	right: 0;
+	top: calc((var(--navbar-height) - var(--wc-height)) / 2);
+}
+
+#nav-bar {
+	margin-right: calc(var(--wc-height) * 6 + var(--wc-left-margin));
+	padding: calc((var(--navbar-height) - 40px) / 2) 0;
+}
+
+/* window controls */
+/* .titlebar-buttonbox-container {
+	margin-bottom: 0 !important;
+} */
+
+.titlebar-button > .toolbarbutton-icon {
+	height: var(--wc-height) !important;
+	min-height: var(--wc-height) !important;
+	width: var(--wc-height) !important;
+	min-width: var(--wc-height) !important;
+}
+
+.titlebar-button {
+	-moz-context-properties: fill, fill-opacity !important;
+	background: none !important;
+	padding: 0 !important;
+}
+
+.titlebar-buttonbox {
+	display: flex;
+	margin-right: var(--wc-height);
+	gap: var(--wc-height);
+}
+
+.titlebar-close {
+	fill: var(--wc-red) !important;
+}
+
+.titlebar-min {
+	fill: var(--wc-yellow) !important;
+}
+
+.titlebar-max, .titlebar-restore {
+	fill: var(--wc-green) !important;
+}
+
+.titlebar-close,
+.titlebar-min,
+.titlebar-max, 
+.titlebar-restore {
+	-moz-appearance: none !important;
+	opacity: 0.7 !important;
+	list-style-image: url(circle.svg) !important;
+}
+
+.titlebar-close:hover,
+.titlebar-min:hover,
+.titlebar-max:hover,
+.titlebar-restore:hover {
+	transform: scale(1.1);
+	opacity: 1 !important;
+}
+
+/* hide sidebar header */
+#sidebar-box[sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action']
+	#sidebar-header {
+	display: none;
+}
+
+#sidebar-box {
+	z-index: 100 !important;
+	position: relative !important;
+	min-width: var(--sidebar-collapsed-width) !important;
+	max-width: var(--sidebar-collapsed-width) !important;
+}
+
+/* inner width = expanded width & move inner to only show initial-width long section */
+#sidebar-box #sidebar {
+	min-width: var(--sidebar-width) !important;
+	max-width: var(--sidebar-width) !important;
+	width: var(--sidebar-width) !important;
+	transform: translateX(
+		calc(var(--sidebar-collapsed-width) - var(--sidebar-width))
+	);
+	transition: var(--transition-duration) var(--transition-ease);
+}
+
+#sidebar-box #sidebar:hover {
+	transform: translateX(0) !important;
+}
+
+#sidebar-box[sidebarcommand='viewBookmarksSidebar'] #sidebar {
+	transform: translateX(0) !important;
+}
