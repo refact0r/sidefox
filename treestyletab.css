@@ -39,5 +39,18 @@ tab-item:hover tab-closebox {
 
 #tabbar {
 	padding: 0px 10px 10px 10px;
-	scrollbar-width: none;
+	scrollbar-color: #ffffff20 transparent;
+}
+
+.newtab-button {
+	padding: 10px;
+}
+
+.after-tabs .newtab-button-box {
+	padding: 0px 10px 10px 10px;
+	background: var(--theme-colors-sidebar);
+}
+
+.newtab-action-selector-anchor {
+	margin: 0 10px 10px 0;
 }
