@@ -9,6 +9,10 @@
 	font-weight: bold !important;
 }
 
+tab-item {
+	overflow: hidden;
+}
+
 tab-item tab-item-substance {
 	padding: 6px !important;
 }
