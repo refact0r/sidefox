@@ -10,7 +10,7 @@
 }
 
 tab-item tab-item-substance {
-	padding: 6px;
+	padding: 6px !important;
 }
 
 tab-item .background {
@@ -46,9 +46,19 @@ tab-item:hover tab-closebox {
 	padding: 10px;
 }
 
+.after-tabs button:hover::before {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
 .after-tabs .newtab-button-box {
-	padding: 0px 10px 10px 10px;
 	background: var(--theme-colors-sidebar);
+}
+
+#tabbar-container > .after-tabs .newtab-button-box {
+	padding: 0 10px 10px 10px;
 }
 
 .newtab-action-selector-anchor {
