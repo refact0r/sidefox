@@ -45,22 +45,24 @@
 	display: none !important;
 }
 
-/* window controls */
-/* .titlebar-buttonbox-container {
-	margin-bottom: 0 !important;
-} */
-
 .titlebar-button > .toolbarbutton-icon {
+	visibility: hidden;
+}
+
+.titlebar-button {
+	padding: 0 !important;
 	height: var(--wc-height) !important;
 	min-height: var(--wc-height) !important;
 	width: var(--wc-height) !important;
 	min-width: var(--wc-height) !important;
+	border-radius: 50%;
+	opacity: 0.7 !important;
 }
 
-.titlebar-button {
-	-moz-context-properties: fill, fill-opacity !important;
-	background: none !important;
-	padding: 0 !important;
+.titlebar-button:hover {
+	transform: scale(1.1);
+	opacity: 1 !important;
+	cursor: pointer;
 }
 
 .titlebar-buttonbox {
@@ -70,33 +72,16 @@
 }
 
 .titlebar-close {
-	fill: var(--wc-red) !important;
+	background: var(--wc-red) !important;
 }
 
 .titlebar-min {
-	fill: var(--wc-yellow) !important;
+	background: var(--wc-yellow) !important;
 }
 
 .titlebar-max,
 .titlebar-restore {
-	fill: var(--wc-green) !important;
-}
-
-.titlebar-close,
-.titlebar-min,
-.titlebar-max,
-.titlebar-restore {
-	-moz-appearance: none !important;
-	opacity: 0.7 !important;
-	list-style-image: url(circle.svg) !important;
-}
-
-.titlebar-close:hover,
-.titlebar-min:hover,
-.titlebar-max:hover,
-.titlebar-restore:hover {
-	transform: scale(1.1);
-	opacity: 1 !important;
+	background: var(--wc-green) !important;
 }
 
 /* hide sidebar header */
