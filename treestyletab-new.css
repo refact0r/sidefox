@@ -1,0 +1,84 @@
+:root {
+	--sidebar-collapsed-width: 48px;
+	--transition-duration: 0.2s;
+	--transition-ease: ease-out;
+}
+
+/* Show title of unread tabs with red and italic font */
+:root.sidebar tab-item.unread .label-content {
+	font-weight: bold !important;
+}
+
+tab-item {
+	overflow: hidden;
+}
+
+tab-item > tab-item-substance {
+	padding: 6px 8px !important;
+}
+
+tab-item tab-favicon {
+	order: 10 !important;
+	margin-left: 16px;
+	margin-right: 16px;
+	transition: var(--transition-duration) var(--transition-ease);
+}
+
+tab-item tab-sound-button {
+	margin-left: 8px;
+}
+tab-item tab-counter {
+}
+
+tab-item tab-closebox {
+	transition: margin-right var(--transition-duration) var(--transition-ease);
+	padding: 0;
+	margin-right: -32px;
+}
+
+tab-item tab-closebox::before {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+}
+
+tab-item:hover tab-closebox {
+	margin-right: 0px;
+}
+
+tab-item.active .background {
+}
+
+#tabbar {
+	padding: 0px 8px 8px 8px;
+	scrollbar-color: #ffffff20 transparent;
+}
+
+.after-tabs [role='button']:hover::before,
+.newtab-button-box:hover > .newtab-action-selector-anchor::before,
+tab-item .background {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.after-tabs .newtab-button-box {
+	background: var(--theme-colors-sidebar);
+}
+
+#tabbar-container > .after-tabs .newtab-button-box {
+	margin: 0 8px 8px 8px;
+}
+
+.newtab-button-box > .newtab-action-selector-anchor {
+	max-width: 20px;
+	width: 20px;
+	margin: 4px;
+	padding: 0px;
+	border-width: 0 !important;
+}
+
+.newtab-action-selector-anchor::after {
+	margin: auto !important;
+}
